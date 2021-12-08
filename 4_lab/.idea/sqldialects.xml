@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/com/riznokril/DAO/implementation/AircraftDaoImpl.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/riznokril/DAO/implementation/AirportDaoImpl.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/riznokril/DAO/implementation/CityDaoImpl.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/riznokril/DAO/implementation/CompanyDaoImpl.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/riznokril/DAO/implementation/FlightsDaoImpl.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/riznokril/DAO/implementation/ModelDaoImpl.java" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/riznokril/DAO/implementation/PilotDaoImpl.java" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/main_script.sql" dialect="MySQL" />
   </component>
 </project>

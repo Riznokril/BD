@@ -73,7 +73,7 @@ create table pilot
     `name` varchar(45) not null,
     licence_number varchar(45) not null,
     surname varchar(45) not null,
-    year_of_employment year not null
+    year_of_employment char(4) not null
 ) engine InnoDB;
 
 

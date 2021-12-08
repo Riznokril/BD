@@ -1,0 +1,38 @@
+package com.riznokril.service.implementation;
+
+import com.riznokril.DAO.implementation.ModelDaoImpl;
+import com.riznokril.entity.ModelEntity;
+import com.riznokril.service.AbstractService;
+
+import java.sql.SQLException;
+import java.util.List;
+
+public class ModelServiceImpl implements AbstractService<ModelEntity> {
+
+    private final ModelDaoImpl dao = new ModelDaoImpl();
+
+    @Override
+    public List<ModelEntity> findAll() throws SQLException {
+        return dao.findAll();
+    }
+
+    @Override
+    public ModelEntity findById(Integer id) throws SQLException {
+        return dao.findById(id);
+    }
+
+    @Override
+    public void create(ModelEntity entity) throws SQLException {
+        dao.create(entity);
+    }
+
+    @Override
+    public void update(Integer id, ModelEntity entity) throws SQLException {
+        dao.update(id, entity);
+    }
+
+    @Override
+    public void delete(Integer id) throws SQLException {
+        dao.delete(id);
+    }
+}
