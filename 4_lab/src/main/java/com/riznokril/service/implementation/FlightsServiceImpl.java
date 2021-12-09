@@ -1,6 +1,6 @@
 package com.riznokril.service.implementation;
 
-import com.riznokril.DAO.implementation.AircraftDaoImpl;
+import com.riznokril.DAO.implementation.FlightsDaoImpl;
 import com.riznokril.entity.FlightsEntity;
 import com.riznokril.service.AbstractService;
 
@@ -9,7 +9,7 @@ import java.util.List;
 
 public class FlightsServiceImpl implements AbstractService<FlightsEntity> {
 
-    private final AircraftDaoImpl dao = new AircraftDaoImpl();
+    private final FlightsDaoImpl dao = new FlightsDaoImpl();
 
     @Override
     public List<FlightsEntity> findAll() throws SQLException {

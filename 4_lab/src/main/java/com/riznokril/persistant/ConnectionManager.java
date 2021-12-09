@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 
 public final class ConnectionManager {
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String url = "jdbc:mysql://localhost:3306/lys_db?useUnicode=true&serverTimezone=UTC";
+    private static final String url = "jdbc:mysql://localhost:3306/rizhko?useUnicode=true&serverTimezone=UTC";
     private static final String user = "root";
     private static final String password = "234432or";
 

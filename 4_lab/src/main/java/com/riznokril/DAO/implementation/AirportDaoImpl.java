@@ -13,7 +13,7 @@ public class AirportDaoImpl implements AbstractDAO<AirportEntity>{
 
     private static final String GET_ALL = "SELECT * FROM rizhko.airport";
     private static final String GET_BY_ID = "SELECT * FROM rizhko.airport WHERE id_airport=?";
-    private static final String CREATE = "INSERT rizhko.airport "
+    private static final String CREATE = "INSERT INTO rizhko.airport "
             + "(`name`, `city_id`) VALUES (?, ?)";
     private static final String UPDATE = "UPDATE rizhko.airport"
             + " SET name=?, city_id=? WHERE id_airport=?";

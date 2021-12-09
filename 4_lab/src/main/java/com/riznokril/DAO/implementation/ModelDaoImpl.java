@@ -13,7 +13,7 @@ public class ModelDaoImpl implements AbstractDAO<ModelEntity>{
 
     private static final String GET_ALL = "SELECT * FROM rizhko.model";
     private static final String GET_BY_ID = "SELECT * FROM rizhko.model WHERE id_model=?";
-    private static final String CREATE = "INSERT rizhko.model "
+    private static final String CREATE = "INSERT INTO rizhko.model "
             + "(`name`, `max_speed`, `passenger_capacity`, `width`, `length`, `height`) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String UPDATE = "UPDATE rizhko.model"
             + " SET name=?, max_speed=?, passenger_capacity=?, width=?, length=?, height=? WHERE id_model=?";

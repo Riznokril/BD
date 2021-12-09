@@ -26,6 +26,16 @@ public class PilotEntity {
         this.year_of_employment = year_of_employment;
     }
 
+    public PilotEntity(Integer aircraft_id, Integer company_id,String name, String licence_number,
+                       String surname, String year_of_employment) {
+        this.aircraft_id = aircraft_id;
+        this.company_id = company_id;
+        this.name = name;
+        this.licence_number = licence_number;
+        this.surname = surname;
+        this.year_of_employment = year_of_employment;
+    }
+
     @Override
     public String toString() {
         return "\n\nPilot: id_pilot: " + id_pilot + ", aircraft_id" + aircraft_id + ", company_id: " + company_id + ", " +

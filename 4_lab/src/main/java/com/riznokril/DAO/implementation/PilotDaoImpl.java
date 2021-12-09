@@ -13,7 +13,7 @@ public class PilotDaoImpl implements AbstractDAO<PilotEntity>{
 
     private static final String GET_ALL = "SELECT * FROM rizhko.pilot";
     private static final String GET_BY_ID = "SELECT * FROM rizhko.pilot WHERE id_pilot=?";
-    private static final String CREATE = "INSERT rizhko.pilot "
+    private static final String CREATE = "INSERT INTO rizhko.pilot "
             + "(`aircraft_id`, `company_id`, `name`, `licence_number`, `surname`, `year_of_employment`) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String UPDATE = "UPDATE rizhko.pilot"
             + " SET aircraft_id=?, company_id=?, name=?, licence_number=?, surname=?, year_of_employment=? WHERE id_pilot=?";

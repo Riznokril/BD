@@ -21,6 +21,13 @@ public class CityEntity {
         this.year_of_foundation = year_of_foundation;
     }
 
+    public CityEntity(String name, String country, String post_number, String year_of_foundation) {
+        this.name = name;
+        this.country = country;
+        this.post_number = post_number;
+        this.year_of_foundation = year_of_foundation;
+    }
+
     @Override
     public String toString() {
         return "\n\nCity: id_city: " + id_city + ", name: " + name + ", " +

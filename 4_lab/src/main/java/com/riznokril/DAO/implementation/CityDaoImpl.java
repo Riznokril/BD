@@ -13,7 +13,7 @@ public class CityDaoImpl implements AbstractDAO<CityEntity>{
 
     private static final String GET_ALL = "SELECT * FROM rizhko.city";
     private static final String GET_BY_ID = "SELECT * FROM rizhko.city WHERE id_city=?";
-    private static final String CREATE = "INSERT rizhko.city "
+    private static final String CREATE = "INSERT INTO rizhko.city "
             + "(`name`, `country`, `post_number`, `year_of_foundation`) VALUES (?, ?, ?, ?)";
     private static final String UPDATE = "UPDATE rizhko.city"
             + " SET name=?, country=?, post_number=?, year_of_foundation=? WHERE id_city=?";

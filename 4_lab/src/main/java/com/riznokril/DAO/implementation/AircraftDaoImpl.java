@@ -13,7 +13,7 @@ public class AircraftDaoImpl implements AbstractDAO<AircraftEntity>{
 
     private static final String GET_ALL = "SELECT * FROM rizhko.aircraft";
     private static final String GET_BY_ID = "SELECT * FROM rizhko.aircraft WHERE id_aircraft=?";
-    private static final String CREATE = "INSERT rizhko.aircraft "
+    private static final String CREATE = "INSERT INTO rizhko.aircraft "
             + "(`company_id`, `expiration_date`, `date_of_commissioning`, `model_id`) VALUES (?, ?, ?, ?)";
     private static final String UPDATE = "UPDATE rizhko.aircraft"
             + " SET company_id=?, expiration_date=?, date_of_commissioning=?, model_id=? WHERE id_aircraft=?";
@@ -27,7 +27,7 @@ public class AircraftDaoImpl implements AbstractDAO<AircraftEntity>{
             while (resultSet.next()) {
                 AircraftEntity flight = new AircraftEntity(
                         resultSet.getInt("id_aircraft"),
-                        resultSet.getInt("id_company"),
+                        resultSet.getInt("company_id"),
                         resultSet.getDate("expiration_date"),
                         resultSet.getDate("date_of_commissioning"),
                         resultSet.getInt("model_id")
@@ -50,7 +50,7 @@ public class AircraftDaoImpl implements AbstractDAO<AircraftEntity>{
             while (resultSet.next()) {
                 aircraft = new AircraftEntity(
                         resultSet.getInt("id_aircraft"),
-                        resultSet.getInt("id_company"),
+                        resultSet.getInt("company_id"),
                         resultSet.getDate("expiration_date"),
                         resultSet.getDate("date_of_commissioning"),
                         resultSet.getInt("model_id")
@@ -66,7 +66,7 @@ public class AircraftDaoImpl implements AbstractDAO<AircraftEntity>{
     public void create(AircraftEntity aircraft) throws SQLException {
         try (PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(CREATE)) {
             statement.setString(1, String.valueOf(aircraft.getId_aircraft()));
-            statement.setString(2, String.valueOf(aircraft.getId_company()));
+            statement.setString(2, String.valueOf(aircraft.getCompany_id()));
             statement.setString(3, String.valueOf(aircraft.getExpiration_date()));
             statement.setString(4, String.valueOf(aircraft.getDate_of_commissioning()));
             statement.setString(5, String.valueOf(aircraft.getModel_id()));
@@ -82,7 +82,7 @@ public class AircraftDaoImpl implements AbstractDAO<AircraftEntity>{
     public void update(Integer id, AircraftEntity aircraft) throws SQLException {
         try (PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(UPDATE)) {
             statement.setInt(1, aircraft.getId_aircraft());
-            statement.setInt(2, aircraft.getId_company());
+            statement.setInt(2, aircraft.getCompany_id());
             statement.setDate(3, aircraft.getExpiration_date());
             statement.setDate(4, aircraft.getDate_of_commissioning());
             statement.setInt(5, aircraft.getModel_id());

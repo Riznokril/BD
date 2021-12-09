@@ -26,6 +26,16 @@ public class ModelEntity {
         this.height = height;
     }
 
+    public ModelEntity(String name, String max_speed, Integer passenger_capacity,
+                       String width, String length, String height) {
+        this.name = name;
+        this.max_speed = max_speed;
+        this.passenger_capacity = passenger_capacity;
+        this.width = width;
+        this.length = length;
+        this.height = height;
+    }
+
     @Override
     public String toString() {
         return "\n\nModel: id_model: " + id_model + ", name: " + name + ", " +

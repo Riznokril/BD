@@ -13,7 +13,7 @@ public class CompanyDaoImpl implements AbstractDAO<CompanyEntity>{
 
     private static final String GET_ALL = "SELECT * FROM rizhko.company";
     private static final String GET_BY_ID = "SELECT * FROM rizhko.company WHERE id_company=?";
-    private static final String CREATE = "INSERT rizhko.company "
+    private static final String CREATE = "INSERT INTO rizhko.company "
             + "(`year_of_foundation`, `city_id`) VALUES (?, ?)";
     private static final String UPDATE = "UPDATE rizhko.company"
             + " SET year_of_foundation=?, city_id=? WHERE id_company=?";
@@ -61,9 +61,9 @@ public class CompanyDaoImpl implements AbstractDAO<CompanyEntity>{
     @Override
     public void create(CompanyEntity company) throws SQLException {
         try (PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(CREATE)) {
-            statement.setString(1, String.valueOf(company.getId_company()));
-            statement.setString(2, String.valueOf(company.getYear_of_foundation()));
-            statement.setString(3, String.valueOf(company.getCity_id()));
+            //statement.setString(1, String.valueOf(company.getId_company()));
+            statement.setString(1, String.valueOf(company.getYear_of_foundation()));
+            statement.setString(2, String.valueOf(company.getCity_id()));
             statement.executeUpdate();
             System.out.println(statement);
         } catch (Exception e) {
@@ -75,9 +75,9 @@ public class CompanyDaoImpl implements AbstractDAO<CompanyEntity>{
     @Override
     public void update(Integer id, CompanyEntity company) throws SQLException {
         try (PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(UPDATE)) {
-            statement.setInt(1, company.getId_company());
-            statement.setString(2, company.getYear_of_foundation());
-            statement.setInt(3, company.getCity_id());
+            //statement.setInt(1, company.getId_company());
+            statement.setString(1, company.getYear_of_foundation());
+            statement.setInt(2, company.getCity_id());
             statement.executeUpdate();
             System.out.println(statement);
         } catch (Exception e) {

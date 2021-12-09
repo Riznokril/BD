@@ -25,6 +25,15 @@ public class FlightsEntity {
         this.departure_airport_id = departure_airport_id;
     }
 
+    public FlightsEntity(Integer aircraft_id, Timestamp departure_time, Timestamp arrival_time,
+                         Integer arrival_airport_id, Integer departure_airport_id) {
+        this.aircraft_id = aircraft_id;
+        this.departure_time = departure_time;
+        this.arrival_time = arrival_time;
+        this.arrival_airport_id = arrival_airport_id;
+        this.departure_airport_id = departure_airport_id;
+    }
+
     @Override
     public String toString() {
         return "\n\nFlight: flight_number: " + flight_number + ", aircraft_id: " + aircraft_id + ", " +

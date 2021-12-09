@@ -13,7 +13,7 @@ public class FlightsDaoImpl implements AbstractDAO<FlightsEntity>{
 
     private static final String GET_ALL = "SELECT * FROM rizhko.flights";
     private static final String GET_BY_ID = "SELECT * FROM rizhko.flights WHERE flight_number=?";
-    private static final String CREATE = "INSERT rizhko.flights "
+    private static final String CREATE = "INSERT INTO rizhko.flights "
             + "(`aircraft_id`, `departure_time`, `arrival_time`, `arrival_airport_id`, `departure_airport_id`) VALUES (?, ?, ?, ?, ?)";
     private static final String UPDATE = "UPDATE rizhko.flights"
             + " SET aircraft_id=?, departure_time=?, arrival_time=?, arrival_airport_id=?, departure_airport_id=? WHERE flight_number=?";
