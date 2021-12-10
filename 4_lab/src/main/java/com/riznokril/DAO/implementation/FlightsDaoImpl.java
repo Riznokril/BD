@@ -67,12 +67,11 @@ public class FlightsDaoImpl implements AbstractDAO<FlightsEntity>{
     @Override
     public void create(FlightsEntity flight) throws SQLException {
         try (PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(CREATE)) {
-                statement.setString(1, String.valueOf(flight.getFlight_number()));
-                statement.setString(2, String.valueOf(flight.getAircraft_id()));
-                statement.setString(3, String.valueOf(flight.getDeparture_time()));
-                statement.setString(4, String.valueOf(flight.getArrival_time()));
-                statement.setString(5, String.valueOf(flight.getArrival_airport_id()));
-                statement.setString(6, String.valueOf(flight.getDeparture_airport_id()));
+                statement.setString(1, String.valueOf(flight.getAircraft_id()));
+                statement.setString(2, String.valueOf(flight.getDeparture_time()));
+                statement.setString(3, String.valueOf(flight.getArrival_time()));
+                statement.setString(4, String.valueOf(flight.getArrival_airport_id()));
+                statement.setString(5, String.valueOf(flight.getDeparture_airport_id()));
                 statement.executeUpdate();
                 System.out.println(statement);
         } catch (Exception e) {

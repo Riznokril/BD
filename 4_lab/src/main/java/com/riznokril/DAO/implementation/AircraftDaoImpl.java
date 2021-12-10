@@ -65,11 +65,10 @@ public class AircraftDaoImpl implements AbstractDAO<AircraftEntity>{
     @Override
     public void create(AircraftEntity aircraft) throws SQLException {
         try (PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(CREATE)) {
-            statement.setString(1, String.valueOf(aircraft.getId_aircraft()));
-            statement.setString(2, String.valueOf(aircraft.getCompany_id()));
-            statement.setString(3, String.valueOf(aircraft.getExpiration_date()));
-            statement.setString(4, String.valueOf(aircraft.getDate_of_commissioning()));
-            statement.setString(5, String.valueOf(aircraft.getModel_id()));
+            statement.setString(1, String.valueOf(aircraft.getCompany_id()));
+            statement.setString(2, String.valueOf(aircraft.getExpiration_date()));
+            statement.setString(3, String.valueOf(aircraft.getDate_of_commissioning()));
+            statement.setString(4, String.valueOf(aircraft.getModel_id()));
             statement.executeUpdate();
             System.out.println(statement);
         } catch (Exception e) {

@@ -17,8 +17,7 @@ public class AirportServiceImpl implements AbstractService<AirportEntity> {
     }
 
     @Override
-    public AirportEntity findById(Integer id) throws SQLException {
-        return dao.findById(id);
+    public AirportEntity findById(Integer id) throws SQLException {        return dao.findById(id);
     }
 
     @Override

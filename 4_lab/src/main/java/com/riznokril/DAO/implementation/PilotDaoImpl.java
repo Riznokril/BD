@@ -69,13 +69,12 @@ public class PilotDaoImpl implements AbstractDAO<PilotEntity>{
     @Override
     public void create(PilotEntity pilot) throws SQLException {
         try (PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(CREATE)) {
-            statement.setString(1, String.valueOf(pilot.getId_pilot()));
-            statement.setString(2, String.valueOf(pilot.getAircraft_id()));
-            statement.setString(3, String.valueOf(pilot.getCompany_id()));
-            statement.setString(4, String.valueOf(pilot.getName()));
-            statement.setString(5, String.valueOf(pilot.getLicence_number()));
-            statement.setString(6, String.valueOf(pilot.getSurname()));
-            statement.setString(7, String.valueOf(pilot.getYear_of_employment()));
+            statement.setString(1, String.valueOf(pilot.getAircraft_id()));
+            statement.setString(2, String.valueOf(pilot.getCompany_id()));
+            statement.setString(3, String.valueOf(pilot.getName()));
+            statement.setString(4, String.valueOf(pilot.getLicence_number()));
+            statement.setString(5, String.valueOf(pilot.getSurname()));
+            statement.setString(6, String.valueOf(pilot.getYear_of_employment()));
             statement.executeUpdate();
             System.out.println(statement);
         } catch (Exception e) {

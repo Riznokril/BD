@@ -61,9 +61,8 @@ public class AirportDaoImpl implements AbstractDAO<AirportEntity>{
     @Override
     public void create(AirportEntity airport) throws SQLException {
         try (PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(CREATE)) {
-            statement.setString(1, String.valueOf(airport.getId_airport()));
-            statement.setString(2, String.valueOf(airport.getName()));
-            statement.setString(3, String.valueOf(airport.getCity_id()));
+            statement.setString(1, String.valueOf(airport.getName()));
+            statement.setString(2, String.valueOf(airport.getCity_id()));
             statement.executeUpdate();
             System.out.println(statement);
         } catch (Exception e) {

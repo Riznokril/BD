@@ -65,11 +65,10 @@ public class CityDaoImpl implements AbstractDAO<CityEntity>{
     @Override
     public void create(CityEntity city) throws SQLException {
         try (PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(CREATE)) {
-            statement.setString(1, String.valueOf(city.getId_city()));
-            statement.setString(2, String.valueOf(city.getName()));
-            statement.setString(3, String.valueOf(city.getCountry()));
+            statement.setString(1, String.valueOf(city.getName()));
+            statement.setString(2, String.valueOf(city.getCountry()));
+            statement.setString(3, String.valueOf(city.getPost_number()));
             statement.setString(4, String.valueOf(city.getPost_number()));
-            statement.setString(5, String.valueOf(city.getPost_number()));
             statement.executeUpdate();
             System.out.println(statement);
         } catch (Exception e) {

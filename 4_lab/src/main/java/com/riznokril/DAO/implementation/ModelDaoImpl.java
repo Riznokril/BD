@@ -69,13 +69,12 @@ public class ModelDaoImpl implements AbstractDAO<ModelEntity>{
     @Override
     public void create(ModelEntity model) throws SQLException {
         try (PreparedStatement statement = ConnectionManager.getConnection().prepareStatement(CREATE)) {
-            statement.setString(1, String.valueOf(model.getId_model()));
-            statement.setString(2, String.valueOf(model.getName()));
-            statement.setString(3, String.valueOf(model.getMax_speed()));
-            statement.setString(4, String.valueOf(model.getPassenger_capacity()));
-            statement.setString(5, String.valueOf(model.getWidth()));
-            statement.setString(6, String.valueOf(model.getHeight()));
-            statement.setString(7, String.valueOf(model.getLength()));
+            statement.setString(1, String.valueOf(model.getName()));
+            statement.setString(2, String.valueOf(model.getMax_speed()));
+            statement.setString(3, String.valueOf(model.getPassenger_capacity()));
+            statement.setString(4, String.valueOf(model.getWidth()));
+            statement.setString(5, String.valueOf(model.getHeight()));
+            statement.setString(6, String.valueOf(model.getLength()));
             statement.executeUpdate();
             System.out.println(statement);
         } catch (Exception e) {
